@@ -1,11 +1,11 @@
 <template>
   <v-layout row wrap>
     <v-flex md6 offset-md3>
-      <h1 class="display-2 mb-4 mt-5">Register</h1>
+      <h1 class="display-2 mb-4 mt-5">Log in</h1>
       <v-text-field v-model="email" type="email" label="Email" outline></v-text-field>
       <v-text-field v-model="password" type="password" label="Password" outline></v-text-field>
       <v-alert :value="error" type="error" transition="fade-transition" v-if="error">{{ error }}</v-alert>
-      <v-btn @click="register">Register</v-btn>
+      <v-btn @click="login">Log In</v-btn>
     </v-flex>
   </v-layout>
 </template>
@@ -22,9 +22,9 @@ export default {
     }
   },
   methods: {
-    async register () {
+    async login () {
       try {
-        const response = await AuthenticationService.register({
+        const response = await AuthenticationService.login({
           email: this.email,
           password: this.password
         })
