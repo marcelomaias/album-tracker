@@ -1,5 +1,5 @@
 <template>
-  <v-layout row wrap>
+  <v-layout row wrap text-xs-center>
     <v-flex md6 offset-md3>
       <h1 class="display-2 mb-4 mt-5">Log in</h1>
       <v-text-field v-model="email" type="email" label="Email" outline></v-text-field>
@@ -30,6 +30,9 @@ export default {
         })
         this.$store.dispatch('setToken', response.data.token)
         this.$store.dispatch('setUser', response.data.user)
+        this.$router.push({
+          name: 'home'
+        })
       } catch (error) {
         this.error = error.response.data.error
       }

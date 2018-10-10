@@ -3,6 +3,9 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import Register from '@/components/Register'
 import Login from '@/components/Login'
+import Albums from '@/components/Albums'
+import Album from '@/components/Album'
+import NewAlbum from '@/components/NewAlbum'
 
 Vue.use(Router)
 
@@ -26,12 +29,19 @@ export default new Router({
       component: Login
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      path: '/albums',
+      name: 'albums',
+      component: Albums
+    },
+    {
+      path: '/album/new',
+      name: 'new-album',
+      component: NewAlbum
+    },
+    {
+      path: '/album/:albumId',
+      name: 'album',
+      component: Album
     }
   ]
 })

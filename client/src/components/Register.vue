@@ -1,5 +1,5 @@
 <template>
-  <v-layout row wrap>
+  <v-layout row wrap text-xs-center>
     <v-flex md6 offset-md3>
       <h1 class="display-2 mb-4 mt-5">Register</h1>
       <v-text-field v-model="email" type="email" label="Email" outline></v-text-field>
