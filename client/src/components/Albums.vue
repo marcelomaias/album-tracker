@@ -3,8 +3,8 @@
     <v-flex md8 offset-md2>
       <h1 class="display-2 mb-4 mt-5">Albums</h1>
       <v-layout row wrap>
-        <v-flex sm6 v-for="album in albums" :key="album.id">
-          <v-card class="mx-4 my-2">
+        <v-flex xs12 sm6 v-for="album in albums" :key="album.id">
+          <v-card class="mx-2 my-2">
             <v-layout>
               <v-flex xs5>
                 <v-img :src="album.cover" contain></v-img>
@@ -33,7 +33,6 @@
 
 <script>
 import AlbumsService from '@/services/AlbumsService'
-
 export default {
   data () {
     return {

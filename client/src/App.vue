@@ -12,7 +12,6 @@
       <v-spacer></v-spacer>
       <v-toolbar-items dark>
         <v-btn flat to="/">Home</v-btn>
-        <!-- <v-btn flat to="about">About</v-btn> -->
         <v-btn flat to="/albums">Albums</v-btn>
         <v-btn flat to="/album/new" v-if="$store.state.isUserLoggedIn">New Album</v-btn>
         <v-btn flat to="/login" v-if="!$store.state.isUserLoggedIn">Login</v-btn>

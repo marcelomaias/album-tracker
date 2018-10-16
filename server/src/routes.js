@@ -15,7 +15,11 @@ module.exports = (app) => {
 
     app.get('/album/:albumId',
         AlbumsController.show)
+    
+    app.put('/album/:albumId',
+        AlbumsController.put)
 
     app.post('/albums',
         AlbumsController.post)
+    
 }

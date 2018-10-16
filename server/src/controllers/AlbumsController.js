@@ -32,5 +32,19 @@ module.exports = {
         error: 'An error has occured trying to create the album.'
       })
     }
+  },
+  async put (req, res) {
+    try {
+      const album = await Album.update(req.body, {
+        where: {
+          id: req.params.albumId
+        }
+      })
+      res.send(album)
+    } catch (err) {
+      res.status(500).send({
+        error: 'An error has occured trying to update the album.'
+      })
+    }
   }
 }

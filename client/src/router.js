@@ -6,6 +6,8 @@ import Login from '@/components/Login'
 import Albums from '@/components/Albums'
 import Album from '@/components/Album'
 import NewAlbum from '@/components/NewAlbum'
+import EditAlbum from '@/components/EditAlbum'
+import AuthGuard from './router-auth'
 
 Vue.use(Router)
 
@@ -36,12 +38,19 @@ export default new Router({
     {
       path: '/album/new',
       name: 'new-album',
-      component: NewAlbum
+      component: NewAlbum,
+      beforeEnter: AuthGuard
     },
     {
       path: '/album/:albumId',
       name: 'album',
       component: Album
+    },
+    {
+      path: '/album/:albumId/edit',
+      name: 'edit-album',
+      component: EditAlbum,
+      beforeEnter: AuthGuard
     }
   ]
 })
