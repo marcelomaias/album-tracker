@@ -21,5 +21,8 @@ module.exports = (app) => {
 
     app.post('/albums',
         AlbumsController.post)
+
+    app.delete('/album/:albumId',
+        AlbumsController.delete)
     
 }

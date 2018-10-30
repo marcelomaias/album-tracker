@@ -17,4 +17,7 @@ export default {
   put (album) {
     return Api().put(`album/${album.id}`, album)
   }
+  // delete (albumId) {
+  //   return Api().delete(`album/${albumId}`)
+  // }
 }

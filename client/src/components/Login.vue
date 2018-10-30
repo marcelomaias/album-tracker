@@ -1,7 +1,11 @@
 <template>
   <v-layout row wrap text-xs-center>
     <v-flex md6 offset-md3>
-      <h1 class="display-2 mb-4 mt-5">Log in</h1>
+      <h1 class="display-2 mb-2 mt-5">Log in</h1>
+      <div class="subheading mb-3">
+        <div>Email: user@mail.com</div>
+        <div>Password: 12345678</div>
+      </div>
       <v-text-field v-model="email" type="email" label="Email" outline></v-text-field>
       <v-text-field v-model="password" type="password" label="Password" outline></v-text-field>
       <v-alert :value="error" type="error" transition="fade-transition" v-if="error">{{ error }}</v-alert>

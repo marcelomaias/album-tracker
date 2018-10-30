@@ -6,7 +6,7 @@
       <v-text-field v-model="album.artist" type="text" label="Artist" outline required :rules="[required]"></v-text-field>
       <v-text-field v-model="album.year" type="text" label="Year" outline required :rules="[required]"></v-text-field>
       <v-text-field v-model="album.description" type="text" label="Description" outline required :rules="[required]"></v-text-field>
-      <v-text-field v-model="album.cover" type="text" label="Cover" outline required :rules="[required]"></v-text-field>
+      <v-text-field v-model="album.cover" type="text" label="Cover" outline></v-text-field>
       <v-alert :value="error" type="error" transition="fade-transition" v-if="error">{{ error }}</v-alert>
       <v-btn @click="cancel">Cancel</v-btn>
       <v-btn @click="save" class="success">Save</v-btn>
@@ -39,19 +39,19 @@ export default {
         .every(key => !!this.album[key])
       if (!allFilled) {
         this.error = 'Please fill in all fields.'
-      }
-
-      const albumId = this.$store.state.route.params.albumId
-      try {
-        await AlbumsService.put(this.album)
-        this.$router.push({
-          name: 'album',
-          params: {
-            albumId: albumId
-          }
-        })
-      } catch (err) {
-        console.log(err)
+      } else {
+        const albumId = this.$store.state.route.params.albumId
+        try {
+          await AlbumsService.put(this.album)
+          this.$router.push({
+            name: 'album',
+            params: {
+              albumId: albumId
+            }
+          })
+        } catch (err) {
+          console.log(err)
+        }
       }
     },
     cancel () {

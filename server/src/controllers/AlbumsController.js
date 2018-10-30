@@ -46,5 +46,15 @@ module.exports = {
         error: 'An error has occured trying to update the album.'
       })
     }
+  },
+  async delete (req, res) {
+    try {
+      const album = await Album.delete(req.params.albumId)
+      res.send(album)
+    } catch (err) {
+      res.status(500).send({
+        error: 'An error has occured trying to delete the album.'
+      })
+    }
   }
 }

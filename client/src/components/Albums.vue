@@ -7,7 +7,8 @@
           <v-card class="mx-2 my-2">
             <v-layout>
               <v-flex xs5>
-                <v-img :src="album.cover" contain></v-img>
+                <v-img v-if="!album.cover" src="../assets/img-placeholder.png" contain></v-img>
+                <v-img v-if="album.cover" :src="album.cover" contain></v-img>
               </v-flex>
               <v-flex xs7>
                 <v-card-title primary-title>
